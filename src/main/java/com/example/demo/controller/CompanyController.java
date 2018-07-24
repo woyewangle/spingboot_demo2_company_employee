@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 import com.example.demo.DB.MemoryDB;
 import com.example.demo.entity.Company;
+import com.example.demo.entity.Employee;
 import com.example.demo.service.CompanyService;
 import com.sun.org.apache.xpath.internal.SourceTree;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,6 +46,16 @@ public class CompanyController {
     @PutMapping("/companies/{id}")
     public Company updateEmployee(@PathVariable int id,@RequestBody Company employee) {
         return companyService.updateCompany(id,employee);
+    }
+
+    @GetMapping("/companies/{id}/employees")
+    public List<Employee> getEmployeesByCompanyId(@PathVariable int id) {
+        return companyService.getEmployeeByCompanyId(id);
+    }
+
+    @GetMapping("/companies/page/{index}/pageSize/{size}")
+    public List<Company> getCompaniesByPage(@PathVariable int index, @PathVariable int size) {
+        return companyService.getCompanyByPage(index, size);
     }
 
 }

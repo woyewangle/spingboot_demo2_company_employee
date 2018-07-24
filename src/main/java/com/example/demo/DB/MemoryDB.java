@@ -20,8 +20,8 @@ public class MemoryDB {
     public MemoryDB(){
         companyList.add(new Company(1,"小米",2));
         companyList.add(new Company(2,"大米",3));
-        EmployeeList.add(new Employee(0,"小明",20,"男",1000));
-        EmployeeList.add(new Employee(1,"小红",19,"女",2000));
+        EmployeeList.add(new Employee(0,"小明",20,"男",1000,1));
+        EmployeeList.add(new Employee(1,"小红",19,"女",2000,2));
 //        EmployeeList.add(new Employee(2,"小智",15,"男",3000));
 //        EmployeeList.add(new Employee(3,"小刚",16,"男",4000));
 //        EmployeeList.add(new Employee(4,"小霞",15,"女",5000));

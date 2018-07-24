@@ -2,9 +2,11 @@ package com.example.demo.service;
 
 import com.example.demo.DB.MemoryDB;
 import com.example.demo.entity.Company;
+import com.example.demo.entity.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -54,5 +56,24 @@ public class CompanyService {
             }
         }
         return newCompany;
+    }
+
+
+    public List<Employee> getEmployeeByCompanyId(int id) {
+        return memoryDB.getEmployeeList().stream()
+                .filter(employee -> employee.getCompanyId()==id)
+                .collect(Collectors.toList());
+    }
+
+    public List<Company> getCompanyByPage(int index, int size) {
+
+        List<Company> companyList = memoryDB.getCompanyList();
+        ArrayList<Company> newCpn = new ArrayList<>();
+        for (int i = 0; i < companyList.size(); i++) {
+            if (i >= index * size && i < (index + 1) * size) {
+                newCpn.add(companyList.get(i));
+            }
+        }
+        return newCpn;
     }
 }

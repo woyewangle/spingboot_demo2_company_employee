@@ -27,6 +27,17 @@ public class Employees {
         return id;
     }
 
+    @Override
+    public String toString() {
+        return "Employees{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", gender='" + gender + '\'' +
+                ", salary=" + salary +
+                '}';
+    }
+
     public void setId(int id) {
         this.id = id;
     }

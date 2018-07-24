@@ -2,6 +2,7 @@ package com.example.demo.ServiceTest;
 
 import com.example.demo.DB.MemoryDB;
 import com.example.demo.entity.Company;
+import com.example.demo.entity.Employee;
 import com.example.demo.service.CompanyService;
 import org.junit.Assert;
 import org.junit.Test;
@@ -57,6 +58,20 @@ public class CompanyServiceTest {
         Company newCompany= companyService.updateCompany(1,Company);
         Assert.assertEquals(newCompany.toString(),
                 Company.toString());
+    }
+
+    @Test
+    public void should_return_right_companyList_When_call_getCompanyByPage() {
+        List<Company> companyList= companyService.getCompanyByPage(1,1);
+        Assert.assertEquals("[Company{id=2, name='大米', EmployeeNumber=3}]",
+                companyList.toString());
+    }
+
+    @Test
+    public void should_return_all_employee_in_this_company_given_companyId_When_call_getEmployeesByCompanyId() {
+        List<Employee> employeeList= companyService.getEmployeesByCompanyId(1);
+        Assert.assertEquals("[Employee{id=0, name='小明', age=20, gender='male', salary=1000}]",
+                employeeList.toString());
     }
 
 

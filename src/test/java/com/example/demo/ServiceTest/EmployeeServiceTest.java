@@ -56,5 +56,19 @@ public class EmployeeServiceTest {
                 employee.toString());
     }
 
+    @Test
+    public void should_return_right_EmployeeList_When_call_getEmployeesByPage() {
+        List<Employee> employeeList= employeeService.getEmployeesByPage(1,1);
+        Assert.assertEquals("[Employee{id=1, name='小红', age=19, gender='female', salary=2000}]",
+                employeeList.toString());
+    }
+
+    @Test
+    public void should_return_all_male_Employee_When_call_updateEmployee() {
+        List<Employee> employeeList= employeeService.getEmployeesByGender("male");
+        Assert.assertEquals("[Employee{id=0, name='小明', age=20, gender='male', salary=1000}]",
+                employeeList.toString());
+    }
+
 
 }

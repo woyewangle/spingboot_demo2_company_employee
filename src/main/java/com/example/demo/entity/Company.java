@@ -42,4 +42,13 @@ public class Company {
     public void setEmployeesNumber(int employeesNumber) {
         this.employeesNumber = employeesNumber;
     }
+
+    @Override
+    public String toString() {
+        return "Company{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", employeesNumber=" + employeesNumber +
+                '}';
+    }
 }

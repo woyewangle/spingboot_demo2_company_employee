@@ -17,10 +17,17 @@ public class MemoryDB {
     public ArrayList<Employees> employeesList=new ArrayList<>();
     public ArrayList<Company> companyList=new ArrayList<>();
 
-    public MemoryDB(ArrayList<Employees> employeesList, ArrayList<Company> companyList) {
-        this.employeesList = employeesList;
-        this.companyList = companyList;
+    public MemoryDB(){
+        companyList.add(new Company(1,"小米",2));
+        companyList.add(new Company(2,"大米",3));
+        employeesList.add(new Employees(0,"小明",20,"男",1000));
+        employeesList.add(new Employees(1,"小红",19,"女",2000));
+        employeesList.add(new Employees(2,"小智",15,"男",3000));
+        employeesList.add(new Employees(3,"小刚",16,"男",4000));
+        employeesList.add(new Employees(4,"小霞",15,"女",5000));
+
     }
+
 
     public ArrayList<Employees> getEmployeesList() {
         return employeesList;

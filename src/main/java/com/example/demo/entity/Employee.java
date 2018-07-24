@@ -13,14 +13,25 @@ public class Employee {
     public String gender;
     public int salary;
 
+    public int getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(int companyId) {
+        this.companyId = companyId;
+    }
+
+    private int companyId;
+
     public Employee(){}
 
-    public Employee(int id, String name, int age, String gender, int salary) {
+    public Employee(int id, String name, int age, String gender, int salary, int companyId) {
         this.id = id;
         this.name = name;
         this.age = age;
         this.gender = gender;
         this.salary = salary;
+        this.companyId = companyId;
     }
 
     public int getId() {

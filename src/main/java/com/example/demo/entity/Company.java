@@ -11,6 +11,7 @@ public class Company {
     public String name;
     public int employeeNumber;
 
+
     public Company(){}
 
     public Company(int id, String name, int employeeNumber) {

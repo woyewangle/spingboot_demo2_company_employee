@@ -52,6 +52,7 @@ public class EmployeeService {
                 oldEmployee.setGender(employee.getGender());
                 oldEmployee.setName(employee.getName());
                 oldEmployee.setSalary(employee.getSalary());
+                oldEmployee.setCompanyId(employee.getCompanyId());
                 newEmployee=oldEmployee;
             }
         }

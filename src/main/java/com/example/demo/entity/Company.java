@@ -9,14 +9,14 @@ package com.example.demo.entity;
 public class Company {
     public int id;
     public String name;
-    public int EmployeeNumber;
+    public int employeeNumber;
 
     public Company(){}
 
-    public Company(int id, String name, int EmployeeNumber) {
+    public Company(int id, String name, int employeeNumber) {
         this.id = id;
         this.name = name;
-        this.EmployeeNumber = EmployeeNumber;
+        this.employeeNumber = employeeNumber;
     }
 
     public int getId() {
@@ -36,11 +36,11 @@ public class Company {
     }
 
     public int getEmployeeNumber() {
-        return EmployeeNumber;
+        return employeeNumber;
     }
 
     public void setEmployeeNumber(int EmployeeNumber) {
-        this.EmployeeNumber = EmployeeNumber;
+        this.employeeNumber = EmployeeNumber;
     }
 
     @Override
@@ -48,7 +48,7 @@ public class Company {
         return "Company{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", EmployeeNumber=" + EmployeeNumber +
+                ", EmployeeNumber=" + employeeNumber +
                 '}';
     }
 }

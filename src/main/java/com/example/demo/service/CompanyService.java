@@ -31,4 +31,28 @@ public class CompanyService {
     public Company findCompanyById(int id) {
         return memoryDB.getCompanyList().stream().filter(e->e.getId()==id).collect(Collectors.toList()).get(0);
     }
+
+    public List<Company> addCompany(Company company) {
+        memoryDB.getCompanyList().add(company);
+        return memoryDB.getCompanyList();
+    }
+
+    public List<Company> deleteCompany(int id) {
+        memoryDB.getCompanyList().removeIf(company -> company.getId()==id);
+        return memoryDB.getCompanyList();
+
+    }
+
+    public Company updateCompany(int id,Company company) {
+        List<Company> companyList = memoryDB.getCompanyList();
+        Company newCompany=new Company();
+        for (Company oldCompany : companyList) {
+            if (oldCompany.getId()==id) {
+                oldCompany.setName(company.getName());
+                oldCompany.setEmployeeNumber(company.getEmployeeNumber());
+                newCompany=oldCompany;
+            }
+        }
+        return newCompany;
+    }
 }

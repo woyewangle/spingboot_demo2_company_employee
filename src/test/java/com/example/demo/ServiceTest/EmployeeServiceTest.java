@@ -47,4 +47,14 @@ public class EmployeeServiceTest {
         Assert.assertEquals("[Employee{id=0, name='小明', age=20, gender='男', salary=1000}]",
                 employeeList.toString());
     }
+
+    @Test
+    public void should_update_Employee_succeed_When_call_updateEmployee() {
+        Employee employee=new Employee(1,"大明",18,"男",2000);
+        Employee newEmployee= employeeService.updateEmployee(1,employee);
+        Assert.assertEquals(newEmployee.toString(),
+                employee.toString());
+    }
+
+
 }

@@ -21,7 +21,7 @@ public class CompanyServiceTest {
     @Test
     public void should_return_all_company_When_call_getCompanyList() {
         List<Company> companyList= companyService.getCompanyList();
-        Assert.assertEquals("[Company{id=1, name='小米', employeesNumber=2}, Company{id=2, name='大米', employeesNumber=3}]",
+        Assert.assertEquals("[Company{id=1, name='小米', EmployeeNumber=2}, Company{id=2, name='大米', EmployeeNumber=3}]",
                 companyList.toString());
 
     }
@@ -30,7 +30,7 @@ public class CompanyServiceTest {
     @Test
     public void should_return_right_company_When_call_findCompanyById() {
         Company company= companyService.findCompanyById(1);
-        Assert.assertEquals("Company{id=1, name='小米', employeesNumber=2}",
+        Assert.assertEquals("Company{id=1, name='小米', EmployeeNumber=2}",
                 company.toString());
 
     }

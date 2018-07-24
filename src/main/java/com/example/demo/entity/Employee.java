@@ -6,16 +6,16 @@ package com.example.demo.entity;
  * @Date: Create in 6:52 PM 7/24/2018
  * @Modified By:
  */
-public class Employees {
+public class Employee {
     public int id;
     public String name;
     public int age;
     public String gender;
     public int salary;
 
-    public Employees(){}
+    public Employee(){}
 
-    public Employees(int id, String name, int age, String gender, int salary) {
+    public Employee(int id, String name, int age, String gender, int salary) {
         this.id = id;
         this.name = name;
         this.age = age;
@@ -29,7 +29,7 @@ public class Employees {
 
     @Override
     public String toString() {
-        return "Employees{" +
+        return "Employee{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", age=" + age +

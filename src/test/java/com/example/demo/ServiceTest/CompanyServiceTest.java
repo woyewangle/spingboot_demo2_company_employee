@@ -24,7 +24,14 @@ public class CompanyServiceTest {
         Assert.assertEquals("[Company{id=1, name='小米', employeesNumber=2}, Company{id=2, name='大米', employeesNumber=3}]",
                 companyList.toString());
 
+    }
 
+
+    @Test
+    public void should_return_right_company_When_call_findCompanyById() {
+        Company company= companyService.findCompanyById(1);
+        Assert.assertEquals("Company{id=1, name='小米', employeesNumber=2}",
+                company.toString());
 
     }
 

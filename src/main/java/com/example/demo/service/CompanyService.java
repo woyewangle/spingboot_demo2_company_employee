@@ -1,10 +1,12 @@
 package com.example.demo.service;
 
 import com.example.demo.DB.MemoryDB;
+import com.example.demo.entity.Company;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * @Author: 余锡鸿
@@ -24,5 +26,9 @@ public class CompanyService {
 
     public List getCompanyList(){
         return memoryDB.getCompanyList();
+    }
+
+    public Company findCompanyById(int id) {
+        return memoryDB.getCompanyList().stream().filter(e->e.getId()==id).collect(Collectors.toList()).get(0);
     }
 }

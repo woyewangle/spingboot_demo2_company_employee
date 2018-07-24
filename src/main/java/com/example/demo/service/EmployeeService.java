@@ -5,6 +5,7 @@ import com.example.demo.entity.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -57,6 +58,24 @@ public class EmployeeService {
             }
         }
         return newEmployee;
+    }
+
+    public List<Employee> getEmployeesByPage(int index, int size) {
+
+        List<Employee> employeeList = memoryDB.getEmployeeList();
+        ArrayList<Employee> newEmployeeList = new ArrayList<>();
+        for (int i = 0; i < employeeList.size(); i++) {
+            if (i >= index * size && i < (index + 1) * size) {
+                newEmployeeList.add(employeeList.get(i));
+            }
+        }
+        return newEmployeeList;
+    }
+
+    public List<Employee> getEmployeesByGender(String gender) {
+        return memoryDB.getEmployeeList().stream()
+                .filter(employee -> employee.getGender().equals(gender))
+                .collect(Collectors.toList());
     }
 
 

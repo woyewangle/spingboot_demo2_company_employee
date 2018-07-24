@@ -59,7 +59,7 @@ public class CompanyService {
     }
 
 
-    public List<Employee> getEmployeeByCompanyId(int id) {
+    public List<Employee> getEmployeesByCompanyId(int id) {
         return memoryDB.getEmployeeList().stream()
                 .filter(employee -> employee.getCompanyId()==id)
                 .collect(Collectors.toList());
@@ -68,12 +68,12 @@ public class CompanyService {
     public List<Company> getCompanyByPage(int index, int size) {
 
         List<Company> companyList = memoryDB.getCompanyList();
-        ArrayList<Company> newCpn = new ArrayList<>();
+        ArrayList<Company> newCompanyList = new ArrayList<>();
         for (int i = 0; i < companyList.size(); i++) {
             if (i >= index * size && i < (index + 1) * size) {
-                newCpn.add(companyList.get(i));
+                newCompanyList.add(companyList.get(i));
             }
         }
-        return newCpn;
+        return newCompanyList;
     }
 }

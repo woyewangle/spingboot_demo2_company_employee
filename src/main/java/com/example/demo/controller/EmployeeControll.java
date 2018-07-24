@@ -43,6 +43,17 @@ public class EmployeeControll {
         return employeeService.updateEmployee(id,employee);
     }
 
+    @GetMapping("/employees/page/{index}/pageSize/{size}")
+    public List<Employee> getEmployeesByPage(@PathVariable int index, @PathVariable int size) {
+        return employeeService.getEmployeesByPage(index, size);
+    }
+
+    @GetMapping("/employees/sex/{gender}")
+    public List<Employee> getEmployeesByGender(@PathVariable String gender) {
+        System.out.println(gender);
+        return employeeService.getEmployeesByGender(gender);
+    }
+
 
 
 

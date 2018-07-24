@@ -50,7 +50,7 @@ public class CompanyController {
 
     @GetMapping("/companies/{id}/employees")
     public List<Employee> getEmployeesByCompanyId(@PathVariable int id) {
-        return companyService.getEmployeeByCompanyId(id);
+        return companyService.getEmployeesByCompanyId(id);
     }
 
     @GetMapping("/companies/page/{index}/pageSize/{size}")
